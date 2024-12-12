@@ -22,8 +22,7 @@ class Event(Base):
     __table_args__ = (
         Index('idx_event_id', 'id'),
         Index('idx_event_total_tickets', 'total_tickets'),
-        Index("ix_events_date", date),
-        Index("ix_events_price", price)
+        Index("ix_events_date", date)
     )
 
     tickets = relationship("Ticket", back_populates="event")
